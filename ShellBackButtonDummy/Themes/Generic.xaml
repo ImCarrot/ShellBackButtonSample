@@ -1,0 +1,29 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="using:ShellBackButtonDummy.Controls">
+
+    <Style TargetType="Controls:MyDummyControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Controls:MyDummyControl">
+                    <Grid x:Name="layoutRoot" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" >
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Name="HeaderBanner" Background="{TemplateBinding HeaderBackground}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <ContentPresenter Content="{TemplateBinding HeaderContent}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                            <AppBarButton x:Name="PrimaryIcon" Icon="{TemplateBinding Icon}" Label="{TemplateBinding IconLabel}" IsCompact="{TemplateBinding IsPrimaryIconCompact}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        </Grid>
+
+                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1"/>
+
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
